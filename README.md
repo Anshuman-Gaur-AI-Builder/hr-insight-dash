@@ -1,5 +1,7 @@
 # HR Insight Dashboard
 
+**Live Demo:** [hr-insight-dash-vercel.vercel.app](https://hr-insight-dash-vercel.vercel.app/)
+
 An AI-powered workforce analytics dashboard that gives CHROs and HR leaders instant, executive-level insights from key workforce metrics — powered by Claude.
 
 ## What It Does
