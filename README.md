@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# HR Insight Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered workforce analytics dashboard that gives CHROs and HR leaders instant, executive-level insights from key workforce metrics — powered by Claude.
 
-Currently, two official plugins are available:
+## What It Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **5 workforce metric cards** — Headcount, Attrition Rate, Time to Hire, Regrettable Attrition, Engagement Score — each with trend indicators vs last month
+- **Attrition trend chart** — 12-month rolling attrition rate (line chart)
+- **Department hiring chart** — Time-to-hire breakdown by department (bar chart)
+- **CHRO Intelligence panel** — One-click AI analysis using Claude Sonnet 4.6 that returns structured insights: risk assessment, root causes, action items, and leading metrics to track
+- **Scenario generator** — Randomize all metrics to test different workforce intelligence scenarios
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript** — Frontend
+- **Vite** — Build tooling
+- **Recharts** — Data visualization
+- **Anthropic API** (Claude Sonnet 4.6) — AI insight generation
+- **Vercel** — Hosting + serverless functions (API key stays server-side)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/Anshuman-Gaur-AI-Builder/hr-insight-dash.git
+cd hr-insight-dash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Create a `.env` file:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+## Deployment
+
+Deployed on Vercel. The Anthropic API call runs through a serverless function at `/api/insight` — the API key is never exposed to the browser.
+
+Set `ANTHROPIC_API_KEY` in Vercel project settings under Environment Variables.
+
+## About
+
+Built as part of a **10-day AI builder challenge** — demonstrating how AI skills can be applied directly to enterprise data, replacing traditional SaaS logic wrappers with intelligent orchestration.
