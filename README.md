@@ -6,7 +6,7 @@ An AI-powered workforce analytics dashboard that gives CHROs and HR leaders inst
 
 ## Screenshot
 
-![HR Insight Dashboard](images/Dashboard.png)
+![HR Insight Dashboard](Images/Dashboard.png)
 
 ## What It Does
 
