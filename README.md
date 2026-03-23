@@ -4,6 +4,10 @@
 
 An AI-powered workforce analytics dashboard that gives CHROs and HR leaders instant, executive-level insights from key workforce metrics — powered by Claude.
 
+## Screenshot
+
+![HR Insight Dashboard](images/Dashboard.png)
+
 ## What It Does
 
 - **5 workforce metric cards** — Headcount, Attrition Rate, Time to Hire, Regrettable Attrition, Engagement Score — each with trend indicators vs last month
